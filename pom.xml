@@ -16,6 +16,7 @@
 
     <properties>
 
+        <project.namespace>lpseleniumcontainer</project.namespace>
         <!-- docker start -->
         <!--<lp.docker.image.name>${project.namespace}:${project.version}_${build.number}</lp.docker.image.name>-->
         <!--<lp.docker.image.full.name>${lp.docker.registry.url}/${lp.docker.image.name}</lp.docker.image.full.name>-->
@@ -47,7 +48,7 @@
                             <docker.host>unix:///var/run/docker.sock</docker.host>
                             <images>
                                 <image>
-                                    <name>lpseleniumcontainer</name>
+                                    <name>${lp.docker.image.full.name}</name>
 
                                     <build>
                                         <assembly>
