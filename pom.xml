@@ -12,6 +12,7 @@
 
     <artifactId>LPSelenium-container</artifactId>
     <groupId>com.liveperson.automation</groupId>
+    <version>1.0.0</version>
     <packaging>pom</packaging>
 
     <scm>
