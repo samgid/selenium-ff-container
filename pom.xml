@@ -53,7 +53,6 @@
                                             <dockerFileDir>${project.basedir}</dockerFileDir>
                                         </assembly>
                                         <tags>
-                                         <tag>${latest}</tag>	
                                             <tag>${project.version}_${build.number}</tag>
                                         </tags>
                                     </build>
