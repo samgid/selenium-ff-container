@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+
+    <parent>
+        <groupId>com.liveperson.maven</groupId>
+        <artifactId>liveperson-parent</artifactId>
+        <version>4.0.4-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>LPSelenium-container</artifactId>
+    <groupId>com.liveperson.automation</groupId>
+    <packaging>pom</packaging>
+
+    <properties>
+
+        <!-- docker start -->
+        <!--<lp.docker.image.name>${project.namespace}:${project.version}_${build.number}</lp.docker.image.name>-->
+        <!--<lp.docker.image.full.name>${lp.docker.registry.url}/${lp.docker.image.name}</lp.docker.image.full.name>-->
+        <!--<docker.image>${lp.docker.image.full.name}</docker.image>-->
+        <!--<pd.artifact.dir>${project.basedir}/../pd-api-server/target</pd.artifact.dir>-->
+        <!--&lt;!&ndash; docker end &ndash;&gt;-->
+    </properties>
+
+    <build>
+        <plugins>
+
+
+            <plugin>
+                <groupId>org.jolokia</groupId>
+                <artifactId>docker-maven-plugin</artifactId>
+                <!-- Create docker image locally on the BuildAgent-->
+
+                <executions>
+                    <execution>
+                        <id>build_and_push_docker_image</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>build</goal>
+                            <goal>push</goal>
+                            <goal>remove</goal>
+                        </goals>
+
+                        <configuration>
+                            <docker.host>unix:///var/run/docker.sock</docker.host>
+                            <images>
+                                <image>
+                                    <name>lpseleniumcontainer</name>
+
+                                    <build>
+                                        <assembly>
+                                            <dockerFileDir>${project.basedir}</dockerFileDir>
+                                        </assembly>
+                                        <tags>
+                                            <tag>${project.version}_${build.number}</tag>
+                                        </tags>
+                                    </build>
+                                </image>
+                            </images>
+                        </configuration>
+
+                    </execution>
+                </executions>
+            </plugin>
+            <!-- docker end -->
+        </plugins>
+    </build>
+
+
+</project>
