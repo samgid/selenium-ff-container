@@ -38,7 +38,7 @@ env | cut -f 1 -d "=" | sort > asroot
   $(for E in $(grep -vxFf asseluser asroot); do echo $E=$(eval echo \$$E); done) \
   DISPLAY=$DISPLAY \
   xvfb-run -n $SERVERNUM --server-args="-screen 0 $GEOMETRY -ac +extension RANDR" \
-  java ${JAVA_OPTS} -cp /opt/selenium/selenium-video-node-1.9.jar:selenium-server-standalone.jar org.openqa.grid.selenium.GridLauncher -servlets com.aimmac23.node.servlet.VideoRecordingControlServlet -proxy com.aimmac23.hub.proxy.VideoProxy\
+  java ${JAVA_OPTS} -cp /opt/selenium/selenium-video-node-1.9.jar:selenium-server-standalone-2.53.0.jar org.openqa.grid.selenium.GridLauncher -servlets com.aimmac23.node.servlet.VideoRecordingControlServlet -proxy com.aimmac23.hub.proxy.VideoProxy\
     -role wd \
     -hub http://$HUB_PORT_4444_TCP_ADDR:$HUB_PORT_4444_TCP_PORT/grid/register \
     ${REMOTE_HOST_PARAM} \
