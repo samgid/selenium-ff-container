@@ -60,6 +60,10 @@
                                     </build>
                                 </image>
                             </images>
+                            <authConfig>
+                                <username>${lp.docker.hub.user}</username>
+                                <password>${lp.docker.hub.password}</password>
+                            </authConfig>
                         </configuration>
 
                     </execution>
