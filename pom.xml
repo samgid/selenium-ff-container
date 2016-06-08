@@ -14,26 +14,23 @@
     <groupId>com.liveperson.automation</groupId>
     <packaging>pom</packaging>
 
-    <properties>
+    <scm>
+		<connection>scm:git:https://lpgithub.dev.lprnd.net/automation-performance/LPSeleniumContainer.git</connection>
+    		<developerConnection>scm:git:https://lpgithub.dev.lprnd.net/automation-performance/LPSeleniumContainer.git</developerConnection>
+		<url>https://lpgithub.dev.lprnd.net/automation-performance/LPSeleniumContainer.git</url>
+    </scm>
 
+    <properties>
         <project.namespace>lpseleniumcontainer</project.namespace>
-        <!-- docker start -->
-        <!--<lp.docker.image.name>${project.namespace}:${project.version}_${build.number}</lp.docker.image.name>-->
-        <!--<lp.docker.image.full.name>${lp.docker.registry.url}/${lp.docker.image.name}</lp.docker.image.full.name>-->
-        <!--<docker.image>${lp.docker.image.full.name}</docker.image>-->
-        <!--<pd.artifact.dir>${project.basedir}/../pd-api-server/target</pd.artifact.dir>-->
-        <!--&lt;!&ndash; docker end &ndash;&gt;-->
-    </properties>
+      </properties>
 
     <build>
         <plugins>
 
-
+<!-- Create docker image locally on the BuildAgent-->
             <plugin>
                 <groupId>org.jolokia</groupId>
                 <artifactId>docker-maven-plugin</artifactId>
-                <!-- Create docker image locally on the BuildAgent-->
-
                 <executions>
                     <execution>
                         <id>build_and_push_docker_image</id>
@@ -49,7 +46,7 @@
                             <images>
                                 <image>
                                     <name>${lp.docker.image.full.name}</name>
-
+                                    
                                     <build>
                                         <assembly>
                                             <dockerFileDir>${project.basedir}</dockerFileDir>
@@ -65,7 +62,6 @@
                                 <password>${lp.docker.hub.password}</password>
                             </authConfig>
                         </configuration>
-
                     </execution>
                 </executions>
             </plugin>
