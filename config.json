@@ -5,7 +5,7 @@
       "seleniumProtocol": "WebDriver",
       "browserName": "firefox",
       "maxInstances": 2,
-      "version": "38"
+      "version": "45"
     }
   ],
   "configuration": {
