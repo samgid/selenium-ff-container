@@ -37,7 +37,7 @@ env | cut -f 1 -d "=" | sort > asroot
   sudo -E -i -u seluser \
   $(for E in $(grep -vxFf asseluser asroot); do echo $E=$(eval echo \$$E); done) \
   DISPLAY=$DISPLAY \
-  echo java ${JAVA_OPTS} -cp /opt/selenium/selenium-video-node-1.9.jar:/opt/selenium/selenium-server-standalone-2.53.0.jar org.openqa.grid.selenium.GridLauncher -servlets com.aimmac23.node.servlet.VideoRecordingControlServlet -proxy com.aimmac23.hub.proxy.VideoProxy\
+  echo java ${JAVA_OPTS} -cp /opt/selenium/selenium-video-node-1.7.jar:/opt/selenium/selenium-server-standalone-2.53.0.jar org.openqa.grid.selenium.GridLauncher -servlets com.aimmac23.node.servlet.VideoRecordingControlServlet -proxy com.aimmac23.hub.proxy.VideoProxy\
            -role wd \
            -hub http://$HUB_PORT_4444_TCP_ADDR:$HUB_PORT_4444_TCP_PORT/grid/register \
            ${REMOTE_HOST_PARAM} \
