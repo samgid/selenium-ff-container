@@ -14,7 +14,7 @@
     "register": true,
     "unregisterIfStillDownAfter": 10000,
     "hubPort": 4444,
-    "hubHost": "ctor-e2e02",
+    "hubHost": "qtvr-mng013",
     "nodeStatusCheckTimeout": 10000,
     "downPollingLimit": 0
   }
