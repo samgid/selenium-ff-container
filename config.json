@@ -9,6 +9,8 @@
     }
   ],
   "configuration": {
+    "timeout": 600000,
+    "browserTimeout": 600000,
     "maxSession": 3,
     "port": 5555,
     "register": true,
