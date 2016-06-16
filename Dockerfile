@@ -8,17 +8,6 @@ ENV ARIK 1
 #==============================
 # Scripts to run Selenium Node
 #==============================
-RUN echo \
-{
-  \"capabilities\": [
-    {
-      \"platform\": \"LINUX\",
-      \"seleniumProtocol\": \"WebDriver\",
-      \"browserName\": \"firefox\",
-      \"maxInstances\": 2,
-      \"version\": \"45\"
-    }
-   > /opt/selenium/config2.json
 
 COPY generate_config /opt/selenium/generate_config
 COPY entry_point.sh /opt/bin/entry_point.sh
