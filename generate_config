@@ -19,7 +19,7 @@ echo "
     \"register\": true,
     \"unregisterIfStillDownAfter\": 10000,
     \"hubPort\": 4444,
-    \"hubHost\": $ARIK,
+   -p \"hubHost\": $ARIK,
     \"nodeStatusCheckTimeout\": 10000,
     \"downPollingLimit\": 0
   }
