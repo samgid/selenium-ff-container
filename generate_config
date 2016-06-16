@@ -1,0 +1,27 @@
+#!/bin/bash
+
+echo "
+{
+  \"capabilities\": [
+    {
+      \"platform\": \"LINUX\",
+      \"seleniumProtocol\": \"WebDriver\",
+      \"browserName\": \"firefox\",
+      \"maxInstances\": 2,
+      \"version\": \"45\"
+    }
+  ],
+  \"configuration\": {
+    \"timeout\": 600000,
+    \"browserTimeout\": 600000,
+    \"maxSession\": 3,
+    \"port\": 5555,
+    \"register\": true,
+    \"unregisterIfStillDownAfter\": 10000,
+    \"hubPort\": 4444,
+    \"hubHost\": $HUB_PORT_4444_TCP_ADDR,
+    \"nodeStatusCheckTimeout\": 10000,
+    \"downPollingLimit\": 0
+  }
+
+}"
