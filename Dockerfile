@@ -8,7 +8,7 @@ ENV ARIK 1
 #==============================
 # Scripts to run Selenium Node
 #==============================
-RUN echo\
+RUN echo \
 {
   \"capabilities\": [
     {
