@@ -4,7 +4,7 @@ ADD https://aimmac23.com/public/maven-repository/com/aimmac23/selenium-video-nod
 ADD http://selenium-release.storage.googleapis.com/2.53/selenium-server-standalone-2.53.0.jar /opt/selenium/
 ADD config.json /opt/selenium/config.json
 
-
+ENV ARIK 1
 #==============================
 # Scripts to run Selenium Node
 #==============================
