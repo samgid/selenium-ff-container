@@ -19,6 +19,7 @@ echo "
     \"browserTimeout\": 600000,
     \"maxSession\": 3,
     \"port\": 5555,
+    \"registerCycle\":10000,
     \"register\": true,
     \"unregisterIfStillDownAfter\": 10000,
     \"hubPort\": 4444,
