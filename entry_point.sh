@@ -27,7 +27,7 @@ echo "
     \"downPollingLimit\": 0
   }
 
-}" > /opt/selenium/config.json
+}" > /opt/selenium/testconfig.json
 
 if [ ! -e /opt/selenium/config.json ]; then
   echo No Selenium Node configuration file, the node-base image is not intended to be run directly. 1>&2
