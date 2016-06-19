@@ -4,7 +4,7 @@ ADD https://aimmac23.com/public/maven-repository/com/aimmac23/selenium-video-nod
 ADD http://selenium-release.storage.googleapis.com/2.53/selenium-server-standalone-2.53.0.jar /opt/selenium/
 
 
-ENV HUB_HOST
+ENV HUB_HOST qtvr-mng013
 #==============================
 # Scripts to run Selenium Node
 #==============================
