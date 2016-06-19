@@ -3,6 +3,31 @@
 source /opt/bin/functions.sh
 
 export GEOMETRY="$SCREEN_WIDTH""x""$SCREEN_HEIGHT""x""$SCREEN_DEPTH"
+echo "
+{
+  \"capabilities\": [
+    {
+      \"platform\": \"LINUX\",
+      \"seleniumProtocol\": \"WebDriver\",
+      \"browserName\": \"firefox\",
+      \"maxInstances\": 2,
+      \"version\": \"45\"
+    }
+  ],
+  \"configuration\": {
+    \"timeout\": 600000,
+    \"browserTimeout\": 600000,
+    \"maxSession\": 3,
+    \"port\": 5555,
+    \"register\": true,
+    \"unregisterIfStillDownAfter\": 10000,
+    \"hubPort\": 4444,
+    \"hubHost\": $HUB_HOST,
+    \"nodeStatusCheckTimeout\": 10000,
+    \"downPollingLimit\": 0
+  }
+
+}" > /opt/selenium/test_config.json
 
 if [ ! -e /opt/selenium/config.json ]; then
   echo No Selenium Node configuration file, the node-base image is not intended to be run directly. 1>&2
