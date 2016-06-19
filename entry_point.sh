@@ -29,7 +29,7 @@ echo "
 
 }" > /opt/selenium/testconfig.json
 
-if [ ! -e /opt/selenium/config.json ]; then
+if [ ! -e /opt/selenium/testconfig.json ]; then
   echo No Selenium Node configuration file, the node-base image is not intended to be run directly. 1>&2
   exit 1
 fi
@@ -66,14 +66,14 @@ env | cut -f 1 -d "=" | sort > asroot
            -role wd \
            -hub http://$HUB_PORT_4444_TCP_ADDR:$HUB_PORT_4444_TCP_PORT/grid/register \
            ${REMOTE_HOST_PARAM} \
-           -nodeConfig /opt/selenium/config.json \
+           -nodeConfig /opt/selenium/testconfig.json \
            ${SE_OPTS}
   xvfb-run -n $SERVERNUM --server-args="-screen 0 $GEOMETRY -ac +extension RANDR" \
   java ${JAVA_OPTS} -cp /opt/selenium/selenium-video-node-1.7.jar:/opt/selenium/selenium-server-standalone-2.53.0.jar org.openqa.grid.selenium.GridLauncher -servlets com.aimmac23.node.servlet.VideoRecordingControlServlet -proxy com.aimmac23.hub.proxy.VideoProxy\
     -role wd \
     -hub http://$HUB_PORT_4444_TCP_ADDR:$HUB_PORT_4444_TCP_PORT/grid/register \
     ${REMOTE_HOST_PARAM} \
-    -nodeConfig /opt/selenium/config.json \
+    -nodeConfig /opt/selenium/testconfig.json \
     ${SE_OPTS} &
 NODE_PID=$!
 
