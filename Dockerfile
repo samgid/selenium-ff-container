@@ -8,7 +8,6 @@ ENV HUB_HOST qtvr-mng013
 #==============================
 # Scripts to run Selenium Node
 #==============================
-COPY config.json /opt/selenium/config.json
 COPY entry_point.sh /opt/bin/entry_point.sh
 RUN chmod +x /opt/bin/entry_point.sh
 
