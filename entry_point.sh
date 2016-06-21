@@ -23,7 +23,7 @@ echo "
     \"register\": true,
     \"unregisterIfStillDownAfter\": 10000,
     \"hubPort\": 4444,
-    \"hubHost\": $HUB_HOST,
+    \"hubHost\": $HUB_PORT_4444_TCP_ADDR,
     \"nodeStatusCheckTimeout\": 10000,
     \"downPollingLimit\": 0
   }
