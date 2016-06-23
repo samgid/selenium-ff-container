@@ -11,7 +11,7 @@ echo "
       \"seleniumProtocol\": \"WebDriver\",
       \"browserName\": \"firefox\",
       \"maxInstances\": 2,
-      \"version\": \"45\"
+      \"version\": $FIREFOX_VERSION
     }
   ],
   \"configuration\": {
