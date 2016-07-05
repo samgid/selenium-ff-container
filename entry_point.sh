@@ -11,7 +11,8 @@ echo "
       \"seleniumProtocol\": \"WebDriver\",
       \"browserName\": \"firefox\",
       \"maxInstances\": 2,
-      \"version\": $FIREFOX_VERSION
+      \"version\": $FIREFOX_VERSION,
+      \"cleanSession\": true
     }
   ],
   \"configuration\": {
@@ -24,8 +25,9 @@ echo "
     \"unregisterIfStillDownAfter\": 10000,
     \"hubPort\": 4444,
     \"hubHost\": $HUB_PORT_4444_TCP_ADDR,
+    \"nodePolling\": 7000,
     \"nodeStatusCheckTimeout\": 10000,
-    \"downPollingLimit\": 0
+    \"downPollingLimit\": 5
   }
 
 }" > /opt/selenium/config.json
